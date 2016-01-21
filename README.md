@@ -12,7 +12,7 @@ Circle-style checkbox component for React Native.
 ```js
 <CircleCheckBox
   checked={true}
-  onPress={(checked) => console.log('My state is: ', checked)}
+  onToggle={(checked) => console.log('My state is: ', checked)}
 />
 ```
 
