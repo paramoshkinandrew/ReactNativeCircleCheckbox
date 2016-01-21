@@ -1,4 +1,4 @@
-ReactNativeCircleCheckbox
+ ReactNativeCircleCheckbox
 =========
 
 Circle-style checkbox component for React Native.
@@ -15,6 +15,12 @@ Circle-style checkbox component for React Native.
   onPress={(checked) => console.log('My state is: ', checked)}
 />
 ```
+
+## Preview
+
+![alt tag](http://s28.postimg.org/55twmp73d/uncheck.png)
+![alt tag](http://s22.postimg.org/q8398tg8t/check.png)
+
 ## Available properties:
 
 - `checked` : initial state of checkbox. Default: `false`
