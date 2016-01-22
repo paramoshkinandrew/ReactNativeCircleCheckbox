@@ -19,7 +19,8 @@ Circle-style checkbox component for React Native.
 ## Preview
 
 ![alt tag](http://s28.postimg.org/55twmp73d/uncheck.png)
-![alt tag](http://s22.postimg.org/q8398tg8t/check.png)
+![alt tag](http://s22.postimg.org/q8398tg8t/check.png)   
+![alt tag](http://s13.postimg.org/o5xeouklj/Screen_Shot_2016_01_22_at_17_08_28.png)
 
 ## Available properties:
 
@@ -31,3 +32,5 @@ Circle-style checkbox component for React Native.
 - `outerColor` : Color of outer circle. Default: `#FC9527`
 - `filterColor` : Color of underlayer circle. Default: `#FFF`
 - `innerColor` : Color of flag. Default: `#FC9527`
+- `label` : Checkbox label. Default: empty
+- `labelPosition` : Label rendering position. Default: `right`, may be 'right' or 'left'

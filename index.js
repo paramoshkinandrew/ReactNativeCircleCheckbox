@@ -1,5 +1,5 @@
 /*
-  ReactNativeCircleCheckbox 0.1.2
+  ReactNativeCircleCheckbox 0.2.0
   https://github.com/ParamoshkinAndrew/ReactNativeCircleCheckbox
   (c) 2016 Andrew Paramoshkin <paramoshkin.andrew@gmail.com>
   ReactNativeCircleCheckbox may be freely distributed under the MIT license.
@@ -11,6 +11,7 @@ var React = require('react-native');
 var {
   StyleSheet,
   View,
+  Text,
   Component,
   TouchableHighlight
 } = React;
@@ -19,13 +20,15 @@ class CircleCheckBox extends Component {
 
   static propTypes = {
    checked: React.PropTypes.bool,
+   label: React.PropTypes.string,
    outerSize: React.PropTypes.number,
    filterSize: React.PropTypes.number,
    innerSize: React.PropTypes.number,
    outerColor: React.PropTypes.string,
    filterColor: React.PropTypes.string,
    innerColor: React.PropTypes.string,
-   onToggle: React.PropTypes.func.isRequired
+   onToggle: React.PropTypes.func.isRequired,
+   labelPosition: React.PropTypes.oneOf(['right', 'left'])
   };
 
   static defaultProps = {
@@ -35,7 +38,9 @@ class CircleCheckBox extends Component {
     innerSize: 18,
     outerColor: '#FC9527',
     filterColor: '#FFF',
-    innerColor: '#FC9527'
+    innerColor: '#FC9527',
+    label: '',
+    labelPosition: 'right'
   };
 
   constructor(props) {
@@ -72,11 +77,15 @@ class CircleCheckBox extends Component {
 
   render() {
     return (
-      <TouchableHighlight style={[styles.alignStyle, this.state.customStyle._circleOuterStyle]} onPress={this._onToggle.bind(this)}>
-        <View style={[styles.alignStyle, this.state.customStyle._circleFilterStyle]}>
-          {this._renderInner()}
-        </View>
-      </TouchableHighlight>
+      <View style={styles.checkBoxContainer}>
+        {this._renderLabel('left')}
+        <TouchableHighlight style={[styles.alignStyle, this.state.customStyle._circleOuterStyle]} onPress={this._onToggle.bind(this)}>
+          <View style={[styles.alignStyle, this.state.customStyle._circleFilterStyle]}>
+            {this._renderInner()}
+          </View>
+        </TouchableHighlight>
+        {this._renderLabel('right')}
+      </View>
     );
   }
 
@@ -89,13 +98,30 @@ class CircleCheckBox extends Component {
   _renderInner() {
     return this.props.checked ? (<View style={this.state.customStyle._circleInnerStyle} />) : (<View/>);
   }
+
+  _renderLabel(position) {
+    var templ = (<View></View>);
+    if ((this.props.label.length > 0) && (position === this.props.labelPosition)) {
+      templ = (<Text style={styles.checkBoxLabel}>{this.props.label}</Text>);
+    }
+    return templ;
+
+  }
 }
 
 var styles = StyleSheet.create({
+  checkBoxContainer: {
+    flexDirection: 'row',
+    alignItems: 'center'
+  },
   alignStyle: {
     justifyContent: 'center',
     alignItems: 'center'
   },
+  checkBoxLabel: {
+    marginLeft: 5,
+    marginRight: 5
+  }
 });
 
 module.exports = CircleCheckBox;
