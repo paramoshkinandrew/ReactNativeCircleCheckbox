@@ -1,5 +1,5 @@
 /*
-  ReactNativeCircleCheckbox 0.1.1
+  ReactNativeCircleCheckbox 0.1.2
   https://github.com/ParamoshkinAndrew/ReactNativeCircleCheckbox
   (c) 2016 Andrew Paramoshkin <paramoshkin.andrew@gmail.com>
   ReactNativeCircleCheckbox may be freely distributed under the MIT license.
@@ -41,40 +41,39 @@ class CircleCheckBox extends Component {
   constructor(props) {
     super(props);
     var outerSize = (parseInt(props.outerSize) < 10 || isNaN(parseInt(props.outerSize))) ? 10 : parseInt(props.outerSize);
-    var outerStyle = {
-      width: outerSize,
-      height: outerSize,
-      borderRadius: outerSize/2,
-      backgroundColor: props.outerColor
-    };
-    var filterSize = (parseInt(props.filterSize) > outerStyle.width + 3 || isNaN(parseInt(props.filterSize))) ? outerStyle.width - 3 : parseInt(props.filterSize);
-    var filterStyle = {
-      width: filterSize,
-      height: filterSize,
-      borderRadius: filterSize/2,
-      backgroundColor: props.filterColor
-    };
-    var innerSize = (parseInt(props.innerSize) > filterStyle.width + 5 || isNaN(parseInt(props.innerSize))) ? filterStyle.width - 5 : parseInt(props.innerSize);
-    var innerStyle = {
-      width: innerSize,
-      height: innerSize,
-      borderRadius: innerSize/2,
-      backgroundColor: props.innerColor
-    };
+    var filterSize = (parseInt(props.filterSize) > outerSize + 3 || isNaN(parseInt(props.filterSize))) ? outerSize - 3 : parseInt(props.filterSize);
+    var innerSize = (parseInt(props.innerSize) > filterSize + 5 || isNaN(parseInt(props.innerSize))) ? filterSize - 5 : parseInt(props.innerSize);
+
+    var customStyle = StyleSheet.create({
+      _circleOuterStyle: {
+        width: outerSize,
+        height: outerSize,
+        borderRadius: outerSize/2,
+        backgroundColor: props.outerColor
+      },
+      _circleFilterStyle: {
+        width: filterSize,
+        height: filterSize,
+        borderRadius: filterSize/2,
+        backgroundColor: props.filterColor
+      },
+      _circleInnerStyle: {
+        width: innerSize,
+        height: innerSize,
+        borderRadius: innerSize/2,
+        backgroundColor: props.innerColor
+      }
+    });
 
     this.state = {
-      checked: props.checked,
-      onToggle: props.onToggle,
-      _circleOuterStyle: outerStyle,
-      _circleFilterStyle: filterStyle,
-      _circleInnerStyle: innerStyle
+      customStyle: customStyle
     }
   }
 
   render() {
     return (
-      <TouchableHighlight style={[styles.alignStyle, this.state._circleOuterStyle]} onPress={() => this._onToggle()}>
-        <View style={[styles.alignStyle, this.state._circleFilterStyle]}>
+      <TouchableHighlight style={[styles.alignStyle, this.state.customStyle._circleOuterStyle]} onPress={this._onToggle.bind(this)}>
+        <View style={[styles.alignStyle, this.state.customStyle._circleFilterStyle]}>
           {this._renderInner()}
         </View>
       </TouchableHighlight>
@@ -88,7 +87,7 @@ class CircleCheckBox extends Component {
   }
 
   _renderInner() {
-    return this.props.checked ? (<View style={this.state._circleInnerStyle} />) : (<View/>);
+    return this.props.checked ? (<View style={this.state.customStyle._circleInnerStyle} />) : (<View/>);
   }
 }
 

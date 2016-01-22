@@ -23,11 +23,13 @@ Circle-style checkbox component for React Native.
 
 ## Available properties:
 
-- `checked` : initial state of checkbox. Default: `false`
-- `onPress` : function that will be invoked by pressing to checkbox with checked property as argument.
-- `outerSize` : Diameter of outer circle. Minimum: `10`, default: `26`
-- `filterSize` : Diameter of underlayer circle. Minimum: `7`, default: `23`
-- `innerSize` : Diameter of flag. Minimum: `2`, default: `18`
-- `outerColor` : Color of outer circle. Default: `#FC9527`
-- `filterColor` : Color of underlayer circle. Default: `#FFF`
-- `innerColor` : Color of flag. Default: `#FC9527`
+Name | Default | Type | Required | Description
+:--- | :----- | :- | :-- | :--------------
+checked | false | boolean | - | Initial state of checkbox
+onPress | null | Func | * | Function that will be invoked by pressing to checkbox with checked property as argument
+outerSize | 26 | number | - | Outer circle diameter. Min: 10
+filterSize | 23 | number | - | Underlayer circle diameter. Min: 7
+innerSize | 18 | number | - | Flag circle diameter. Min: 2
+outerColor | #FC9527 | string | - | Outer circle color
+filterColor | #FFF | string | - | Underlayer circle color
+innerColor | #FC9527 | string | - | Flag circle color
