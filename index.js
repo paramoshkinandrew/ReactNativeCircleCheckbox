@@ -28,7 +28,8 @@ class CircleCheckBox extends Component {
    filterColor: React.PropTypes.string,
    innerColor: React.PropTypes.string,
    onToggle: React.PropTypes.func.isRequired,
-   labelPosition: React.PropTypes.oneOf(['right', 'left'])
+   labelPosition: React.PropTypes.oneOf(['right', 'left']),
+   styleCheckboxContainer: View.propTypes.style,
   };
 
   static defaultProps = {
@@ -77,7 +78,7 @@ class CircleCheckBox extends Component {
 
   render() {
     return (
-      <View style={styles.checkBoxContainer}>
+      <View style={[styles.checkBoxContainer, this.props.styleCheckboxContainer]}>
         {this._renderLabel('left')}
         <TouchableHighlight style={[styles.alignStyle, this.state.customStyle._circleOuterStyle]} onPress={this._onToggle.bind(this)}>
           <View style={[styles.alignStyle, this.state.customStyle._circleFilterStyle]}>
