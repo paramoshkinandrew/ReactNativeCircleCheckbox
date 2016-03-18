@@ -13,7 +13,7 @@ var {
   View,
   Text,
   Component,
-  TouchableHighlight
+  TouchableOpacity,
 } = React;
 
 class CircleCheckBox extends Component {
@@ -78,15 +78,17 @@ class CircleCheckBox extends Component {
 
   render() {
     return (
-      <View style={[styles.checkBoxContainer, this.props.styleCheckboxContainer]}>
-        {this._renderLabel('left')}
-        <TouchableHighlight style={[styles.alignStyle, this.state.customStyle._circleOuterStyle]} onPress={this._onToggle.bind(this)}>
-          <View style={[styles.alignStyle, this.state.customStyle._circleFilterStyle]}>
-            {this._renderInner()}
+      <TouchableOpacity onPress={this._onToggle.bind(this)}>
+        <View style={[styles.checkBoxContainer, this.props.styleCheckboxContainer]}>
+          {this._renderLabel('left')}
+          <View style={[styles.alignStyle, this.state.customStyle._circleOuterStyle]}>
+            <View style={[styles.alignStyle, this.state.customStyle._circleFilterStyle]}>
+              {this._renderInner()}
+            </View>
           </View>
-        </TouchableHighlight>
-        {this._renderLabel('right')}
-      </View>
+          {this._renderLabel('right')}
+        </View>
+      </TouchableOpacity>
     );
   }
 
