@@ -7,14 +7,13 @@
 
 'use strict'
 
-var React = require('react-native');
-var {
+import React, { Component } from 'react'
+import {
   StyleSheet,
   View,
   Text,
-  Component,
   TouchableOpacity,
-} = React;
+} from 'react-native'
 
 class CircleCheckBox extends Component {
 
