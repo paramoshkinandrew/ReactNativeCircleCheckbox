@@ -29,6 +29,7 @@ class CircleCheckBox extends Component {
    onToggle: React.PropTypes.func.isRequired,
    labelPosition: React.PropTypes.oneOf(['right', 'left']),
    styleCheckboxContainer: View.propTypes.style,
+   styleLabel: View.propTypes.style,
   };
 
   static defaultProps = {
@@ -40,7 +41,8 @@ class CircleCheckBox extends Component {
     filterColor: '#FFF',
     innerColor: '#FC9527',
     label: '',
-    labelPosition: 'right'
+    labelPosition: 'right',
+    styleLabel: {}
   };
 
   constructor(props) {
@@ -104,7 +106,7 @@ class CircleCheckBox extends Component {
   _renderLabel(position) {
     var templ = (<View></View>);
     if ((this.props.label.length > 0) && (position === this.props.labelPosition)) {
-      templ = (<Text style={styles.checkBoxLabel}>{this.props.label}</Text>);
+      templ = (<Text style={[styles.checkBoxLabel, this.props.styleLabel]}>{this.props.label}</Text>);
     }
     return templ;
 
