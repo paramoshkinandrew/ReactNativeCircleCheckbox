@@ -35,3 +35,4 @@ Circle-style checkbox component for React Native.
 - `label` : Checkbox label. Default: empty
 - `labelPosition` : Label rendering position. Default: `right`, may be 'right' or 'left'
 - `styleCheckboxContainer`: Styles for checkbox container.
+- `styleLabel`: Styles for label.
