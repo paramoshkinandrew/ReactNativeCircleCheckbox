@@ -29,7 +29,7 @@ class CircleCheckBox extends Component {
    onToggle: React.PropTypes.func.isRequired,
    labelPosition: React.PropTypes.oneOf(['right', 'left']),
    styleCheckboxContainer: View.propTypes.style,
-   styleLabel: View.propTypes.style,
+   styleLabel: Text.propTypes.style,
   };
 
   static defaultProps = {
