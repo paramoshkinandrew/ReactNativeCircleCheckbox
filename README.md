@@ -10,9 +10,13 @@ Circle-style checkbox component for React Native.
 ## Usage
 
 ```js
+import CircleCheckBox, {LABEL_POSITION} from 'react-native-circle-checkbox';  
+   
 <CircleCheckBox
   checked={true}
   onToggle={(checked) => console.log('My state is: ', checked)}
+  labelPosition={LABEL_POSITION.RIGHT}
+  label="Checkbox example"
 />
 ```
 
@@ -33,6 +37,6 @@ Circle-style checkbox component for React Native.
 - `filterColor` : Color of underlayer circle. Default: `#FFF`
 - `innerColor` : Color of flag. Default: `#FC9527`
 - `label` : Checkbox label. Default: empty
-- `labelPosition` : Label rendering position. Default: `right`, may be 'right' or 'left'
+- `labelPosition` : Label rendering position. Default: `right`, may be 'right' or 'left'. For your convenience this package exports `LABEL_POSITION` object with two keys - `RIGHT` and `LEFT`. You can use it for `labelPosition` definition.
 - `styleCheckboxContainer`: Styles for checkbox container.
 - `styleLabel`: Styles for label.

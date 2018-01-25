@@ -41,7 +41,7 @@ export default class CircleCheckBox extends React.Component {
     filterColor: '#FFF',
     innerColor: '#FC9527',
     label: '',
-    labelPosition: 'right',
+    labelPosition: LABEL_POSITION.RIGHT,
     styleLabel: {}
   };
 
