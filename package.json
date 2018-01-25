@@ -1,6 +1,6 @@
 {
   "name": "react-native-circle-checkbox",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Circle checkbox component for React Native",
   "main": "index.js",
   "scripts": {
@@ -22,12 +22,17 @@
   "author": "Andrew Paramoshkin <paramoshkin.andrew@gmail.com>",
   "licenses": [
     {
-      "type" :"MIT",
+      "type": "MIT",
       "url": "https://github.com/paramoshkinandrew/ReactNativeCircleCheckbox/blob/master/LICENSE"
     }
   ],
   "bugs": {
     "url": "https://github.com/paramoshkinandrew/ReactNativeCircleCheckbox/issues"
   },
-  "homepage": "https://github.com/paramoshkinandrew/ReactNativeCircleCheckbox"
+  "homepage": "https://github.com/paramoshkinandrew/ReactNativeCircleCheckbox",
+  "dependencies": {
+    "prop-types": "latest",
+    "react": "^16.2.0",
+    "react-native": "^0.52.1"
+  }
 }
