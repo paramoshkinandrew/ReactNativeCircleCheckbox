@@ -1,6 +1,6 @@
 {
   "name": "react-native-circle-checkbox",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Circle checkbox component for React Native",
   "main": "index.js",
   "scripts": {
@@ -31,8 +31,10 @@
   },
   "homepage": "https://github.com/paramoshkinandrew/ReactNativeCircleCheckbox",
   "dependencies": {
-    "prop-types": "latest",
-    "react": "^16.2.0",
-    "react-native": "^0.52.1"
+    "prop-types": "latest"
+  },
+  "peerDependencies": {
+    "react": ">=16.2.0",
+    "react-native": ">=0.52.1"
   }
 }
