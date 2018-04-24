@@ -17,15 +17,13 @@ Circle-style checkbox component for React Native.
 ```
 
 ## Preview
-
-![alt tag](http://s28.postimg.org/55twmp73d/uncheck.png)
-![alt tag](http://s22.postimg.org/q8398tg8t/check.png)   
-![alt tag](http://s13.postimg.org/o5xeouklj/Screen_Shot_2016_01_22_at_17_08_28.png)
+    
+![alt tag](https://i.imgur.com/eWLb0Cp.gif "Preview")
 
 ## Available properties:
 
 - `checked` : initial state of checkbox. Default: `false`
-- `onPress` : function that will be invoked by pressing to checkbox with checked property as argument.
+- `onToggle` : function that will be invoked by pressing to checkbox with checked property as argument.
 - `outerSize` : Diameter of outer circle. Minimum: `10`, default: `26`
 - `filterSize` : Diameter of underlayer circle. Minimum: `7`, default: `23`
 - `innerSize` : Diameter of flag. Minimum: `2`, default: `18`
